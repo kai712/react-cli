@@ -1,5 +1,5 @@
 # react-cli
-react+router4x+ant-design脚手架
+react+ant-design脚手架
 # 使用
 
 > npm install
