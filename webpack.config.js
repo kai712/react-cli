@@ -3,7 +3,7 @@ const webpack = require('webpack'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       OpenBrowserPlugin = require('open-browser-webpack-plugin'),
       ExtractTextPlugin = require('extract-text-webpack-plugin'),
-      port = '8080';
+      port = '8000';
 
 const BUILD_DIR = path.resolve(__dirname,'dist');
 const APP_DIR = path.resolve(__dirname, 'src');
