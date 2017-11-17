@@ -10,7 +10,8 @@ const APP_DIR = path.resolve(__dirname, 'src');
 
 module.exports = {
     entry: [
-        path.resolve(__dirname, 'src/app.js')
+        path.resolve(__dirname, 'src/app.js'),
+        path.resolve(__dirname, 'src/sss.js')
     ],
     output: {
         path: BUILD_DIR,
@@ -36,21 +37,30 @@ module.exports = {
                 loader: ExtractTextPlugin.extract({ 
                     fallback: 'style-loader',
                     use: 'css-loader?modules'
-                 }),
+                }),
+                include: [
+                    APP_DIR
+                ]
             },
             {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract({ 
                     fallback: 'style-loader',
                     use: 'css-loader?!less-loader'
-                 }),
+                }),
+                include: [
+                    APP_DIR
+                ]
             },
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({ 
                     fallback: 'style-loader',
                     use: 'css-loader?!sass-loader'
-                 }),
+                }),
+                include: [
+                    APP_DIR
+                ]
             },
             {
                 test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
@@ -75,6 +85,12 @@ module.exports = {
         port: port
     },
     plugins: [
+        //缩小打包体积
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+              warnings: false
+            }
+        }),
         new HtmlWebpackPlugin({
             template: './index.html'
         }),
