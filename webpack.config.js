@@ -10,8 +10,7 @@ const APP_DIR = path.resolve(__dirname, 'src');
 
 module.exports = {
     entry: [
-        path.resolve(__dirname, 'src/app.js'),
-        path.resolve(__dirname, 'src/sss.js')
+        path.resolve(__dirname, 'src/app.js')
     ],
     output: {
         path: BUILD_DIR,
