@@ -42,16 +42,6 @@ module.exports = {
                 ]
             },
             {
-                test: /\.less$/,
-                loader: ExtractTextPlugin.extract({ 
-                    fallback: 'style-loader',
-                    use: 'css-loader?!less-loader'
-                }),
-                include: [
-                    APP_DIR
-                ]
-            },
-            {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({ 
                     fallback: 'style-loader',
